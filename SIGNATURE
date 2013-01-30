@@ -1,0 +1,44 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.69.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 21a63588068237d417143ad1ccd2a6c3f13b62e0 MANIFEST
+SHA1 20ddd3befe95c96808dd3b12c791d887a93234a8 MANIFEST.SKIP
+SHA1 72db78d2ffe13e93813b4f23568f2e52c3a3746b META.yml
+SHA1 359e13952d16d8a62ef424d56127641a1b82a737 Makefile.PL
+SHA1 56102122fb4eaf1f4c75978c230b32f69bb4e2e3 README
+SHA1 238cc44648cedfdf4a1ad2c66a839c72db4e3d7b etc/initialdata
+SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
+SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
+SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
+SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
+SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
+SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
+SHA1 43b47fb3c5ec06b71bb175258c8c1b2aaf8a10ab inc/Module/Install/RTx.pm
+SHA1 ac48900ca998a08baa4b03997df0abbce9c8c48e inc/Module/Install/RTx/Factory.pm
+SHA1 dc94326a076aca41452c1d65bf52a255feeb9ef7 inc/Module/Install/ReadmeFromPod.pm
+SHA1 13c903897bad7f0fdd7871a4a0182ff62dfbefd5 inc/Module/Install/Substitute.pm
+SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
+SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
+SHA1 076a362383584b5d2d677e9e35fb5a3a1ba0f990 lib/RT/Extension/NonWatcherRecipients.pm
+SHA1 d1069044cdcfa867b09706bdb303be8d21c161d6 lib/RT/Extension/NonWatcherRecipients/Test.pm.in
+SHA1 9016102478b8bbecfef05ef0147b42a0315a566f xt/basic.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iD8DBQFRCWDRHdv9ZfNcOAcRAngnAKCQYEHgf0eZMMcJQDMkW328EpSprACfcuyg
+t/y+gIPelKLxpOYIradqsng=
+=3UXq
+-----END PGP SIGNATURE-----
