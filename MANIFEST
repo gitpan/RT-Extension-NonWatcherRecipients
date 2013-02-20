@@ -13,6 +13,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/RT/Extension/NonWatcherRecipients.pm
 lib/RT/Extension/NonWatcherRecipients/Test.pm.in
+Changes
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP

@@ -1,0 +1,6 @@
+0.02    Tue Feb 19 17:44:00 PST 2013
+
+    * Critical bug fix: avoids template error and mail sending failure
+
+    * Return the empty string instead of undef for friendlier use in templates
+    * Abort early if we don't have a ticket and transaction

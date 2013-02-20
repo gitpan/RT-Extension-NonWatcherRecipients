@@ -14,9 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 21a63588068237d417143ad1ccd2a6c3f13b62e0 MANIFEST
+SHA1 b3a32eafe3ecfd51340c5dfffaa9ad3c2d62b361 Changes
+SHA1 5c9f6fcf6cd791213c575857dcc56daad5d05bb0 MANIFEST
 SHA1 20ddd3befe95c96808dd3b12c791d887a93234a8 MANIFEST.SKIP
-SHA1 72db78d2ffe13e93813b4f23568f2e52c3a3746b META.yml
+SHA1 ac0226c066fc2e217da22fa031a3ec7501ac95f6 META.yml
 SHA1 359e13952d16d8a62ef424d56127641a1b82a737 Makefile.PL
 SHA1 56102122fb4eaf1f4c75978c230b32f69bb4e2e3 README
 SHA1 238cc44648cedfdf4a1ad2c66a839c72db4e3d7b etc/initialdata
@@ -32,13 +33,13 @@ SHA1 dc94326a076aca41452c1d65bf52a255feeb9ef7 inc/Module/Install/ReadmeFromPod.p
 SHA1 13c903897bad7f0fdd7871a4a0182ff62dfbefd5 inc/Module/Install/Substitute.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
-SHA1 076a362383584b5d2d677e9e35fb5a3a1ba0f990 lib/RT/Extension/NonWatcherRecipients.pm
+SHA1 2f2fd358ee8701b68da849878d4a0879d37c4c36 lib/RT/Extension/NonWatcherRecipients.pm
 SHA1 d1069044cdcfa867b09706bdb303be8d21c161d6 lib/RT/Extension/NonWatcherRecipients/Test.pm.in
-SHA1 9016102478b8bbecfef05ef0147b42a0315a566f xt/basic.t
+SHA1 b358746095ca3629f54aa286d7385e32a7154823 xt/basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iD8DBQFRCWDRHdv9ZfNcOAcRAngnAKCQYEHgf0eZMMcJQDMkW328EpSprACfcuyg
-t/y+gIPelKLxpOYIradqsng=
-=3UXq
+iD8DBQFRJCrqHdv9ZfNcOAcRAiNNAJ4tKvIuwbxdsVGM+y/lVIATMBLdZwCffFGN
+f2ov+/O0Yimh5jKseqQH9zw=
+=AkMz
 -----END PGP SIGNATURE-----

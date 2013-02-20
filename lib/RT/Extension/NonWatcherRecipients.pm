@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package RT::Extension::NonWatcherRecipients;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -110,22 +110,23 @@ sub FindRecipients {
     my $Transaction = $args{Transaction};
     my $Ticket = $args{Ticket};
     my $recipients; # List of recipients
-    my $message;  # Message for template
+    my $message = ""; # Message for template
 
     unless ( $Transaction->Id and $Ticket->Id ){
         RT::Logger->error("Transaction and Ticket objects are required. "
                           . "Received Transaction Id: " . $Transaction->Id
                           . " and Ticket Id: " . $Ticket->Id);
+        return "";
     }
 
-    return unless my $att = $Transaction->Attachments->First;
+    return "" unless my $att = $Transaction->Attachments->First;
 
     my %addr = %{ $att->Addresses };
     my $creator = $Transaction->CreatorObj->RealName || '';
 
     # Show any extra recipients
     for my $hdr (qw(From To Cc RT-Send-Cc RT-Send-Bcc)) {
-        my @new = grep { not $self->IsWatcher($_->address) } @{$addr{$hdr} || []};
+        my @new = grep { not $self->IsWatcher($_->address, $Ticket) } @{$addr{$hdr} || []};
         $recipients .= "   $hdr: " . $self->Format(\@new) . "\n"
             if @new;
     }
