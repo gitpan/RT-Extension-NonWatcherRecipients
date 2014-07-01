@@ -1,9 +1,9 @@
 use inc::Module::Install;
 
 RTx 'RT-Extension-NonWatcherRecipients';
-all_from 'lib/RT/Extension/NonWatcherRecipients.pm';
-readme_from 'lib/RT/Extension/NonWatcherRecipients.pm';
 license  'gplv2';
+
+repository 'https://github.com/bestpractical/rt-extension-nonwatcherrecipients';
 
 my ($lp) = ($INC{'RT.pm'} =~ /^(.*)[\\\/]/);
 my $lib_path = join( ' ', "$RT::LocalPath/lib", $lp );
@@ -26,6 +26,9 @@ substitute(
     },
            qw(lib/RT/Extension/NonWatcherRecipients/Test.pm),
 );
+
+requires_rt '4.0.0';
+rt_too_new '4.4.0';
 
 sign;
 WriteAll;

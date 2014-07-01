@@ -27,12 +27,12 @@ DESCRIPTION
     add them. If not, you can just ignore the message.
 
 INSTALLATION
-    "perl Makefile.PL"
-    "make"
-    "make install"
+    perl Makefile.PL
+    make
+    make install
         May need root permissions
 
-    "make initdb"
+    make initdb
         Only run this the first time you install this module.
 
         If you run this twice, you may end up with duplicate data in your
@@ -42,23 +42,24 @@ INSTALLATION
         in case changes need to be made to your database.
 
     Edit your /opt/rt4/etc/RT_SiteConfig.pm
-        Add this line:
+        If you are using RT 4.2 or greater, add this line:
+
+            Plugin('RT::Extension::NonWatcherRecipients');
+
+        For RT 4.0, add this line:
 
             Set(@Plugins, qw(RT::Extension::NonWatcherRecipients));
 
-        or add "RT::Extension::NonWatcherRecipients" to your existing
-        @Plugins line.
-
-    Clear your mason cache
-            rm -rf /opt/rt4/var/mason_data/obj
+        or add RT::Extension::NonWatcherRecipients to your existing @Plugins
+        line.
 
     Restart your webserver
 
 USAGE
-    If you run the "make initdb" step, a new global template called
-    "NonWatcherRecipients Admin Correspondence" is installed on your system.
+    If you run the make initdb step, a new global template called
+    NonWatcherRecipients Admin Correspondence is installed on your system.
     You can then select this template for any scrips that use the standard
-    "Admin Correspondence" template. We recommend the "Admin Correspondence"
+    Admin Correspondence template. We recommend the Admin Correspondence
     template because you'll need RT privileges to add the user to the
     ticket.
 
@@ -83,20 +84,20 @@ METHODS
     Returns: a message to insert in a template
 
 AUTHOR
-    Jim Brandt <jbrandt@bestpractical.com>
-
-    Thomas Sibley <trs@bestpractical.com>
+    Best Practical Solutions, LLC <modules@bestpractical.com>
 
 BUGS
     All bugs should be reported via email to
-    bug-RT-Extension-NonWatcherRecipients@rt.cpan.org
-    <mailto:bug-RT-Extension-NonWatcherRecipients@rt.cpan.org> or via the
-    web at rt.cpan.org
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-NonWatche
-    rRecipients>.
+
+        L<bug-RT-Extension-NonWatcherRecipients@rt.cpan.org|mailto:bug-RT-Extension-NonWatcherRecipients@rt.cpan.org>
+
+    or via the web at
+
+        L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-NonWatcherRecipients>.
 
 LICENSE AND COPYRIGHT
-    This software is Copyright (c) 2013 by Best Practical Solutions, LLC
+    This software is Copyright (c) 2013-2014 by Best Practical Solutions,
+    LLC
 
     This is free software, licensed under:
 

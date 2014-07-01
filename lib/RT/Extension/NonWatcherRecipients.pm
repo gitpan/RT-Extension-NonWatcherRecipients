@@ -2,11 +2,12 @@ use strict;
 use warnings;
 package RT::Extension::NonWatcherRecipients;
 
-our $VERSION = '0.02';
+our $VERSION = '1.00';
 
 =head1 NAME
 
-RT-Extension-NonWatcherRecipients - Note when non-watchers received an email which RT redistributed to watchers
+RT-Extension-NonWatcherRecipients - Note when non-watchers received an
+email which RT redistributed to watchers
 
 =head1 DESCRIPTION
 
@@ -48,23 +49,23 @@ May need root permissions
 
 Only run this the first time you install this module.
 
-If you run this twice, you may end up with duplicate data in your
-database.
+If you run this twice, you may end up with duplicate data
+in your database.
 
 If you are upgrading this module, check for upgrading instructions
 in case changes need to be made to your database.
 
 =item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
 
-Add this line:
+If you are using RT 4.2 or greater, add this line:
+
+    Plugin('RT::Extension::NonWatcherRecipients');
+
+For RT 4.0, add this line:
 
     Set(@Plugins, qw(RT::Extension::NonWatcherRecipients));
 
 or add C<RT::Extension::NonWatcherRecipients> to your existing C<@Plugins> line.
-
-=item Clear your mason cache
-
-    rm -rf /opt/rt4/var/mason_data/obj
 
 =item Restart your webserver
 
@@ -139,7 +140,7 @@ sub FindRecipients {
     }
 
     # Show From if there's a different phrase; this catches name changes and "via RT"
-    my @from = grep { $_->phrase ne $creator } @{$addr{From} || []};
+    my @from = grep { ($_->phrase||'') ne $creator } @{$addr{From} || []};
     $message = "   From: " . $self->Format(\@from) . ($message ? "\n\n$message" : "\n")
         if @from;
 
@@ -176,21 +177,21 @@ sub Format {
 
 =head1 AUTHOR
 
-Jim Brandt <jbrandt@bestpractical.com>
-
-Thomas Sibley <trs@bestpractical.com>
+Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
 
 =head1 BUGS
 
 All bugs should be reported via email to
-L<bug-RT-Extension-NonWatcherRecipients@rt.cpan.org|mailto:bug-RT-Extension-NonWatcherRecipients@rt.cpan.org>
-or via the web at
-L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-NonWatcherRecipients>.
 
+    L<bug-RT-Extension-NonWatcherRecipients@rt.cpan.org|mailto:bug-RT-Extension-NonWatcherRecipients@rt.cpan.org>
+
+or via the web at
+
+    L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-NonWatcherRecipients>.
 
 =head1 LICENSE AND COPYRIGHT
 
-This software is Copyright (c) 2013 by Best Practical Solutions, LLC
+This software is Copyright (c) 2013-2014 by Best Practical Solutions, LLC
 
 This is free software, licensed under:
 
